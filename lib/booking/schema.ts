@@ -12,10 +12,10 @@ function addDays(isoDate: string, days: number): string {
 }
 
 /**
- * Builds the request schema for one client: the reason must be one the clinic lists,
+ * Builds the request schema for one client: the reason and the visit type must be ones the clinic lists,
  * and the date must fall between today and one year ahead in the clinic's time zone.
  */
-export function bookingRequestSchema(opts: { reasons: string[]; timeZone: string; now?: Date }) {
+export function bookingRequestSchema(opts: { reasons: string[]; visitTypes: string[]; timeZone: string; now?: Date }) {
   const today = todayIn(opts.timeZone, opts.now);
   const lastDay = addDays(today, 365);
   return z.object({
@@ -32,6 +32,7 @@ export function bookingRequestSchema(opts: { reasons: string[]; timeZone: string
       .refine((d) => d >= today, "Choose today or a later date")
       .refine((d) => d <= lastDay, "Choose a date within the next year"),
     reason: z.enum(opts.reasons as [string, ...string[]], { error: "Choose a reason from the list" }),
+    visitType: z.enum(opts.visitTypes as [string, ...string[]], { error: "Choose how you would like to consult" }),
     /** Honeypot. People never see this field; bots fill it. */
     website: z.string().max(0).optional().or(z.literal("")),
   });

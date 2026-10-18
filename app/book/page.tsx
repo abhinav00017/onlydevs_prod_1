@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getClient } from "@/lib/client";
 import { telHref, whatsappHref } from "@/lib/links";
+import { activeOffer } from "@/lib/offer";
 import { AppointmentForm } from "@/components/booking/AppointmentForm";
+import { AppointmentFormFromUrl } from "@/components/booking/AppointmentFormFromUrl";
+import { OfferCard } from "@/components/offer/OfferCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
@@ -17,15 +21,26 @@ export default function BookPage() {
   const page = pages.book;
   const wa = whatsappHref(site);
   const a = site.contact.address;
+  const offer = activeOffer(site);
+  const formProps = {
+    reasons: site.booking.reasons,
+    visitTypes: site.booking.visitTypes,
+    labels: site.ui.form,
+    provider: site.booking.provider,
+  };
   return (
     <>
       <PageHeader eyebrow={page.eyebrow} heading={page.heading} intro={page.intro} />
       <section className="bg-background py-14 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-[3fr_2fr] lg:gap-16">
           <div className="rounded-theme bg-background p-6 ring-1 ring-muted sm:p-8">
-            <AppointmentForm reasons={site.booking.reasons} labels={site.ui.form} provider={site.booking.provider} />
+            {/* ?type= is read in the browser. The static HTML holds the form with the first visit type. */}
+            <Suspense fallback={<AppointmentForm {...formProps} />}>
+              <AppointmentFormFromUrl {...formProps} />
+            </Suspense>
           </div>
           <aside className="space-y-6">
+            {offer ? <OfferCard offer={offer} label={site.ui.offerLabel} /> : null}
             <div className="rounded-theme bg-surface-alt p-7 ring-1 ring-accent">
               <p className="font-heading text-xl font-semibold text-heading">{site.ui.callNow}</p>
               <a href={telHref(site)} className="mt-2 block text-2xl font-semibold text-link underline-offset-4 hover:underline">

@@ -7,7 +7,12 @@ export type { BookingResult } from "./schema";
 
 /** Validates a booking request and hands it to the provider site.json picks. */
 export async function handleBooking(site: Site, body: unknown, now?: Date): Promise<BookingResult> {
-  const schema = bookingRequestSchema({ reasons: site.booking.reasons, timeZone: site.timezone, now });
+  const schema = bookingRequestSchema({
+    reasons: site.booking.reasons,
+    visitTypes: site.booking.visitTypes.map((t) => t.id),
+    timeZone: site.timezone,
+    now,
+  });
   const parsed = schema.safeParse(body);
   if (!parsed.success) {
     const fieldErrors: Record<string, string> = {};

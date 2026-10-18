@@ -1,17 +1,21 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
-import type { UiLabels } from "@/lib/schema";
+import type { UiLabels, VisitType } from "@/lib/schema";
 import type { BookingResult } from "@/lib/booking/schema";
+import { Badge } from "@/components/ui/Badge";
 import { Icon } from "@/components/ui/Icon";
 
 type Props = {
   reasons: string[];
+  visitTypes: VisitType[];
+  /** Visit type id to select first, for example from /book?type=online. Unknown ids fall back to the first type. */
+  initialVisitType?: string;
   labels: UiLabels["form"];
   provider: "whatsapp" | "email";
 };
 
-type FieldName = "name" | "phone" | "date" | "reason";
+type FieldName = "name" | "phone" | "date" | "reason" | "visitType";
 type State =
   | { status: "idle" }
   | { status: "submitting" }
@@ -21,8 +25,18 @@ type State =
 const inputClass =
   "mt-2 block min-h-12 w-full rounded-xl border-0 bg-background px-4 py-3 text-base text-heading ring-1 ring-heading/20 placeholder:text-heading/50 focus:ring-2 focus:ring-link focus:outline-none aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-primary";
 
-export function AppointmentForm({ reasons, labels, provider }: Props) {
+export function AppointmentForm({ reasons, visitTypes, initialVisitType, labels, provider }: Props) {
   const [state, setState] = useState<State>({ status: "idle" });
+  const pick = (wanted?: string) => visitTypes.find((t) => t.id === wanted)?.id ?? visitTypes[0].id;
+  const [visitType, setVisitType] = useState(() => pick(initialVisitType));
+  // Follow ?type= when it changes on the same page (the offer bar links to /book?type=online)
+  // without clearing what the visitor has typed.
+  const [lastInitial, setLastInitial] = useState(initialVisitType);
+  if (initialVisitType !== lastInitial) {
+    setLastInitial(initialVisitType);
+    setVisitType(pick(initialVisitType));
+  }
+  const selected = visitTypes.find((t) => t.id === visitType) ?? visitTypes[0];
   const dateRef = useRef<HTMLInputElement>(null);
   const doneRef = useRef<HTMLDivElement>(null);
   const id = useId();
@@ -122,6 +136,44 @@ export function AppointmentForm({ reasons, labels, provider }: Props) {
           {state.message}
         </div>
       ) : null}
+
+      <fieldset aria-describedby={selected.description ? `${id}-visitType-description` : undefined}>
+        <legend className="font-medium text-heading">
+          {labels.visitType}
+          {requiredMark}
+        </legend>
+        <div className="mt-2 grid gap-3 sm:grid-cols-2">
+          {visitTypes.map((t) => (
+            <label
+              key={t.id}
+              className="flex min-h-14 cursor-pointer items-center gap-3 rounded-xl bg-background px-4 py-3 text-heading ring-1 ring-heading/20 transition hover:ring-heading/50 has-checked:bg-surface-alt has-checked:ring-2 has-checked:ring-primary"
+            >
+              <input
+                type="radio"
+                name="visitType"
+                value={t.id}
+                checked={visitType === t.id}
+                onChange={() => setVisitType(t.id)}
+                className="size-5 shrink-0 accent-primary"
+              />
+              <span className="font-medium">{t.label}</span>
+              {/* The space keeps the accessible name "Online consultation Free", not "...consultationFree". */}
+              {t.free ? " " : null}
+              {t.free ? (
+                <Badge tone="primary" className="ml-auto px-2.5 py-0.5 text-xs font-semibold">
+                  {labels.free}
+                </Badge>
+              ) : null}
+            </label>
+          ))}
+        </div>
+        {selected.description ? (
+          <p id={`${id}-visitType-description`} aria-live="polite" className="mt-2 text-sm text-heading/80">
+            {selected.description}
+          </p>
+        ) : null}
+        {errorText("visitType")}
+      </fieldset>
 
       <div>
         <label htmlFor={`${id}-name`} className="font-medium text-heading">
