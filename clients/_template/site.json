@@ -28,6 +28,19 @@
     "reasons": [
       "TODO reason one",
       "TODO reason two"
+    ],
+    "visitTypes": [
+      {
+        "id": "clinic",
+        "label": "TODO visit type label, like Visit the clinic",
+        "description": "TODO short description, like the hospital name and area"
+      },
+      {
+        "id": "online",
+        "label": "TODO visit type label, like Online consultation",
+        "description": "TODO short description, like Video or phone call",
+        "free": false
+      }
     ]
   },
   "images": {
@@ -37,5 +50,12 @@
   "footer": {
     "blurb": "TODO blurb",
     "copyright": "TODO copyright"
+  },
+  "offer": {
+    "enabled": false,
+    "title": "TODO offer title, like Your first online consultation is free",
+    "text": "TODO one line about the offer",
+    "ctaLabel": "TODO button label, like Book online",
+    "ctaHref": "/book?type=online"
   }
 }

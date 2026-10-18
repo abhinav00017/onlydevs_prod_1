@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { imageFile, phone, slug, text } from "./common";
+import { href, imageFile, phone, slug, text } from "./common";
 
 const formLabels = z
   .object({
@@ -8,6 +8,8 @@ const formLabels = z
     date: z.string().default("Preferred date"),
     reason: z.string().default("Reason for visit"),
     reasonPlaceholder: z.string().default("Choose a reason"),
+    visitType: z.string().default("How would you like to consult?"),
+    free: z.string().default("Free"),
     required: z.string().default("Required"),
     submit: z.string().default("Request appointment"),
     submitting: z.string().default("Sending…"),
@@ -52,9 +54,34 @@ const ui = z
     notFoundHeading: z.string().default("Page not found"),
     notFoundText: z.string().default("The page you asked for does not exist."),
     backHome: z.string().default("Back to home"),
+    offerLabel: z.string().default("Offer"),
+    dismissOffer: z.string().default("Hide this offer"),
     form: formLabels,
   })
   .prefault({});
+
+/** One way to consult, such as a clinic visit or an online call. The id goes in /book?type=<id>. */
+const visitType = z.object({
+  id: slug,
+  label: text,
+  description: text.optional(),
+  /** Shows a "Free" badge and adds booking.freeLine to the request message. */
+  free: z.boolean().default(false),
+});
+
+/** An optional offer, shown as a bar above the header, a card on /book and a line in the hero. */
+const offer = z
+  .object({
+    enabled: z.boolean(),
+    title: text.max(80, "must be 80 characters or fewer to fit the announcement bar"),
+    text: text.optional(),
+    ctaLabel: text.optional(),
+    ctaHref: href.optional(),
+  })
+  .refine((o) => !!o.ctaLabel === !!o.ctaHref, {
+    message: "ctaLabel and ctaHref must be set together",
+    path: ["ctaHref"],
+  });
 
 export const siteSchema = z
   .object({
@@ -95,11 +122,21 @@ export const siteSchema = z
     booking: z.object({
       provider: z.enum(["whatsapp", "email"], { error: "must be whatsapp or email" }),
       reasons: z.array(text).min(1, "must list at least one reason"),
+      visitTypes: z
+        .array(visitType, { error: "must list the ways to consult, like a clinic visit" })
+        .min(1, "must list at least one visit type")
+        .refine((types) => new Set(types.map((t) => t.id)).size === types.length, "every visit type id must be unique"),
       messageTemplate: z
         .string()
+        .refine((t) => t.includes("{visitType}"), "must include {visitType} so the clinic knows how to consult")
         .default(
-          "Hello {clinic}, I would like to book an appointment.\nName: {name}\nPhone: {phone}\nPreferred date: {date}\nReason: {reason}",
+          "Hello {clinic}, I would like to book an appointment.\nName: {name}\nPhone: {phone}\nVisit type: {visitType}\nPreferred date: {date}\nReason: {reason}",
         ),
+      /**
+       * Added to the request message when the chosen visit type is free.
+       * {visitType} becomes the visit type label with a lower-case first letter.
+       */
+      freeLine: z.string().default("First {visitType}: free"),
     }),
     images: z.object({
       favicon: imageFile,
@@ -109,6 +146,7 @@ export const siteSchema = z
       blurb: text,
       copyright: text,
     }),
+    offer: offer.optional(),
     ui,
   })
   .superRefine((site, ctx) => {
@@ -123,3 +161,5 @@ export const siteSchema = z
 
 export type Site = z.infer<typeof siteSchema>;
 export type UiLabels = Site["ui"];
+export type VisitType = Site["booking"]["visitTypes"][number];
+export type Offer = NonNullable<Site["offer"]>;

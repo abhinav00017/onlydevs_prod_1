@@ -32,6 +32,19 @@
       "Wellness check",
       "Cancer screening",
       "Something else"
+    ],
+    "visitTypes": [
+      {
+        "id": "clinic",
+        "label": "Visit the clinic",
+        "description": "Medlife Multi Speciality Hospital, Collectorate Junction"
+      },
+      {
+        "id": "online",
+        "label": "Online consultation",
+        "description": "Video or phone call. Your first one is free.",
+        "free": true
+      }
     ]
   },
   "images": {
@@ -41,5 +54,12 @@
   "footer": {
     "blurb": "Care for women at every stage of life, from the first check-up to pregnancy and beyond.",
     "copyright": "© 2026 Dr. Gowthami Namballa"
+  },
+  "offer": {
+    "enabled": true,
+    "title": "Your first online consultation is free",
+    "text": "Book an online visit with Dr. Gowthami at no cost.",
+    "ctaLabel": "Book online",
+    "ctaHref": "/book?type=online"
   }
 }

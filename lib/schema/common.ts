@@ -29,15 +29,15 @@ export const imageFile = z
 
 /**
  * A link target in client data.
- * - "/path" for a page on this site
+ * - "/path" for a page on this site, with an optional simple query like "/book?type=online"
  * - "https://..." for another site
  * - "action:call", "action:whatsapp" or "action:book" so phone numbers live in one place (site.json)
  */
 export const href = z
   .string()
   .regex(
-    /^(\/[a-z0-9\-/]*|https:\/\/\S+|action:(call|whatsapp|book))$/,
-    'must be a site path like /about, an https:// URL, or one of action:call, action:whatsapp, action:book',
+    /^(\/[a-z0-9\-/]*(\?[a-z0-9_-]+=[a-z0-9_-]+(&[a-z0-9_-]+=[a-z0-9_-]+)*)?|https:\/\/\S+|action:(call|whatsapp|book))$/,
+    'must be a site path like /about or /book?type=online, an https:// URL, or one of action:call, action:whatsapp, action:book',
   );
 
 export const icon = z.enum(ICON_NAMES, {

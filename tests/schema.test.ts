@@ -94,4 +94,72 @@ describe("client data validation", () => {
     const have = fs.readdirSync(path.join(process.cwd(), "clients", "_template")).sort();
     expect(have).toEqual(want);
   });
+
+  it("treats the offer as optional", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      delete j.offer;
+    });
+    expect(loadClient("drgowthami", dir).site.offer).toBeUndefined();
+  });
+
+  it("needs the offer's button label and link together", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      delete (j.offer as Record<string, unknown>).ctaHref;
+    });
+    expect(problemsOf(() => loadClient("drgowthami", dir))).toEqual([
+      "site.json › offer.ctaHref: ctaLabel and ctaHref must be set together",
+    ]);
+  });
+
+  it("rejects an offer link to a visit type that does not exist", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      (j.offer as Record<string, unknown>).ctaHref = "/book?type=house-call";
+    });
+    expect(problemsOf(() => loadClient("drgowthami", dir))).toEqual([
+      'site.json › offer.ctaHref: "house-call" is not a visit type. Use one of: clinic, online',
+    ]);
+  });
+
+  it("requires booking.visitTypes", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      delete (j.booking as Record<string, unknown>).visitTypes;
+    });
+    expect(problemsOf(() => loadClient("drgowthami", dir))).toEqual([
+      "site.json › booking.visitTypes: must list the ways to consult, like a clinic visit",
+    ]);
+  });
+
+  it("requires at least one visit type", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      (j.booking as Record<string, unknown>).visitTypes = [];
+    });
+    expect(problemsOf(() => loadClient("drgowthami", dir))).toEqual([
+      "site.json › booking.visitTypes: must list at least one visit type",
+    ]);
+  });
+
+  it("rejects two visit types with the same id", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      const types = (j.booking as { visitTypes: { id: string }[] }).visitTypes;
+      types[1].id = types[0].id;
+    });
+    expect(problemsOf(() => loadClient("drgowthami", dir))).toEqual([
+      "site.json › booking.visitTypes: every visit type id must be unique",
+    ]);
+  });
+
+  it("requires {visitType} in a custom booking message", () => {
+    const dir = brokenCopy("site.json", (j) => {
+      (j.booking as Record<string, unknown>).messageTemplate = "Hello {clinic}. Name: {name}";
+    });
+    expect(problemsOf(() => loadClient("drgowthami", dir))).toEqual([
+      "site.json › booking.messageTemplate: must include {visitType} so the clinic knows how to consult",
+    ]);
+  });
+
+  it("_template fails on its visit type and offer placeholders", () => {
+    const problems = problemsOf(() => loadClient("_template"));
+    expect(problems).toContain("site.json › booking.visitTypes[0].label: still has a TODO placeholder");
+    expect(problems).toContain("site.json › offer.title: still has a TODO placeholder");
+  });
 });

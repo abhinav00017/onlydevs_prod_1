@@ -130,11 +130,21 @@ export function loadClient(slug: string, clientsDir: string = CLIENTS_DIR): Clie
     ...data.services.items.map((s) => `/services/${s.slug}`),
     ...data.pages.legal.map((l) => `/${l.slug}`),
   ]);
+  const visitTypeIds = data.site.booking.visitTypes.map((t) => t.id);
   const checkRoute = (label: string, target: string) => {
-    if (target.startsWith("/") && !routes.has(target)) {
+    if (!target.startsWith("/")) return;
+    const [pathname, query] = target.split("?");
+    if (!routes.has(pathname)) {
       problems.push(`${label}: "${target}" is not a page on this site`);
+      return;
+    }
+    // /book?type=<id> preselects a visit type, so the id must be one site.json lists.
+    const type = new URLSearchParams(query ?? "").get("type");
+    if (pathname === "/book" && type !== null && !visitTypeIds.includes(type)) {
+      problems.push(`${label}: "${type}" is not a visit type. Use one of: ${visitTypeIds.join(", ")}`);
     }
   };
+  if (data.site.offer?.ctaHref) checkRoute("site.json › offer.ctaHref", data.site.offer.ctaHref);
   data.pages.nav.forEach((n, i) => checkRoute(`pages.json › nav[${i}].href`, n.href));
   data.pages.footerNav.forEach((n, i) => checkRoute(`pages.json › footerNav[${i}].href`, n.href));
   const s = data.pages.sections;
