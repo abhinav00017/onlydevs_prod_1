@@ -23,6 +23,7 @@ describe("theme", () => {
     ["headings on surfaceAlt", "heading", "surfaceAlt"],
     ["button text on primary", "onPrimary", "primary"],
     ["links on page background", "link", "background"],
+    ["links on surfaceAlt (hero offer line)", "link", "surfaceAlt"],
     ["footer text on footer", "onFooter", "footer"],
   ];
   it.each(pairs)("%s meets WCAG AA (4.5:1)", (_label, fg, bg) => {

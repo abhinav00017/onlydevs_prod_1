@@ -106,3 +106,8 @@
     color: var(--color-heading);
   }
 }
+
+/* lib/offer.ts sets this attribute before paint when a visitor has hidden the current offer. */
+html[data-offer-dismissed] [data-offer-bar] {
+  display: none;
+}

@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { getClient } from "@/lib/client";
 import { fontClassNames } from "@/lib/fonts";
 import { imageUrl } from "@/lib/links";
+import { activeOffer, offerDismissScript } from "@/lib/offer";
 import { themeToCss } from "@/lib/theme";
 import { FloatingCall } from "@/components/layout/FloatingCall";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { OfferAnnouncement } from "@/components/offer/OfferAnnouncement";
 import "@/styles/globals.css";
 
 // Every page is client data read from JSON at build time. Fail the build if any route
@@ -41,10 +43,17 @@ export function generateViewport(): Viewport {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const client = getClient();
   const { site, theme, pages } = client;
+  const offer = activeOffer(site);
+  // suppressHydrationWarning: the offer script may add data-offer-dismissed to <html> before React hydrates.
   return (
-    <html lang={site.locale} className={fontClassNames([theme.fonts.heading, theme.fonts.body])}>
+    <html
+      lang={site.locale}
+      className={fontClassNames([theme.fonts.heading, theme.fonts.body])}
+      suppressHydrationWarning={offer ? true : undefined}
+    >
       <head>
         <style id="client-theme" dangerouslySetInnerHTML={{ __html: themeToCss(theme) }} />
+        {offer ? <script id="offer-dismiss" dangerouslySetInnerHTML={{ __html: offerDismissScript(offer) }} /> : null}
       </head>
       <body className="flex min-h-dvh flex-col antialiased">
         <a
@@ -53,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           {site.ui.skipToContent}
         </a>
+        <OfferAnnouncement site={site} />
         <Header site={site} nav={pages.nav} />
         <main id="main" className="flex-1">
           {children}

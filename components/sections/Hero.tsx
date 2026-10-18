@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Pages, Site } from "@/lib/schema";
 import { imageUrl, resolveHref } from "@/lib/links";
+import { activeOffer } from "@/lib/offer";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -10,6 +12,7 @@ type Props = { data: Pages["sections"]["hero"]; site: Site; slug: string };
 
 export function Hero({ data, site, slug }: Props) {
   const src = imageUrl(slug, data.image);
+  const offer = activeOffer(site);
   return (
     <section aria-labelledby="hero-heading" className="relative overflow-hidden bg-surface-alt">
       <div
@@ -36,6 +39,22 @@ export function Hero({ data, site, slug }: Props) {
               </Button>
             ) : null}
           </div>
+          {offer ? (
+            <p className="mt-5 flex items-start gap-2 text-base font-medium text-heading">
+              <Icon name="sparkles" className="mt-0.5 size-5 shrink-0 text-primary" />
+              <span>
+                {offer.title}
+                {offer.ctaLabel && offer.ctaHref ? (
+                  <>
+                    {" "}
+                    <Link href={offer.ctaHref} className="font-semibold whitespace-nowrap text-link underline underline-offset-4">
+                      {offer.ctaLabel}
+                    </Link>
+                  </>
+                ) : null}
+              </span>
+            </p>
+          ) : null}
           {data.stats.length > 0 ? (
             <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-4">
               {data.stats.map((s) => (
