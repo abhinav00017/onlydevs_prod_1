@@ -50,3 +50,20 @@ Append only. Newest at the bottom.
 - Header felt compressed on desktop: brand, nav, phone and button sat packed together. Fix: more space between the groups, nav centred, phone number out of the header on normal desktops.
 - Dr. Gowthami gives every patient one free online consultation. Show this offer on the site (announcement bar and booking page). Offer text and on/off live in site.json so other clients can drop it.
 - Booking must allow an online consultation, not only a clinic visit. The form gets a visit type choice (in clinic / online). Visit types are data in site.json.
+
+## 2026-10-18 (header, offer, online booking)
+
+- Header: brand left, nav centred in a `flex-1` middle group, Book button right. Nav gap is 32px at lg and 40px from xl; nav text 15px at lg, 16px from xl. Header row is 80px on lg+ (81px with the bottom border).
+- The phone number is out of the header at every width. Measured: the header row stays inside max-w-6xl (1088px of content) even at 1920, so brand, nav, phone and button could not all fit with space between them. The hero, floating mobile bar, /contact and footer still show it.
+- Tagline shows on sm to md and from 2xl (1536px) up. At lg and xl it pushed the groups together.
+- Measured gaps between brand, nav and button: 36px at 1024, 84px at 1280 and 1440, 56px at 1920 (tagline on). No wrap at any of these widths.
+- `site.offer` is optional: `{ enabled, title, text?, ctaLabel?, ctaHref? }`. ctaLabel and ctaHref must be set together. The title is capped at 80 characters for the bar. A disabled offer still has to pass validation (no TODO).
+- Client hrefs may now carry a simple query, like `/book?type=online`. The loader checks the path is a real page and, for `/book?type=`, that the id is in `booking.visitTypes`.
+- Offer bar: server-rendered, `bg-primary` with `text-on-primary` (4.9:1). Dismissal stores a hash of the offer wording in localStorage `offer-dismissed`. An inline `<head>` script sets `data-offer-dismissed` on `<html>` before paint, and CSS hides the bar, so a returning visitor sees no flash. New wording gives a new hash, so the bar shows again. `<html>` has `suppressHydrationWarning` only when an offer is on.
+- The mobile menu panel now measures the header's bottom edge when it opens, because the bar moves the header down until the page scrolls.
+- `booking.visitTypes` is required, min 1, unique ids: `{ id, label, description?, free? }`.
+- `/book?type=` is read with `useSearchParams()` in a client component inside `<Suspense>`. Server-side `searchParams` would break `ensureStatic = 'navigation'`. The static HTML has the form with the first visit type; the browser switches to the requested type after hydration.
+- `/api/book` validates `visitType` against the client's ids and answers 400 with `fieldErrors.visitType` for an unknown or missing one.
+- The request message lives in one place, `lib/booking/message.ts`, for WhatsApp and email. `booking.messageTemplate` must contain `{visitType}`. When the type is free, `booking.freeLine` (default "First {visitType}: free") is added, with the label's first letter in lower case unless it is an acronym.
+- The email provider is still a stub, but `buildBookingEmail` builds the subject and text now and has a test.
+- The dev server served stale CSS once (a rule appended to globals.css did not appear) until it restarted. Cause not known.
