@@ -67,3 +67,4 @@ Append only. Newest at the bottom.
 - The request message lives in one place, `lib/booking/message.ts`, for WhatsApp and email. `booking.messageTemplate` must contain `{visitType}`. When the type is free, `booking.freeLine` (default "First {visitType}: free") is added, with the label's first letter in lower case unless it is an acronym.
 - The email provider is still a stub, but `buildBookingEmail` builds the subject and text now and has a test.
 - The dev server served stale CSS once (a rule appended to globals.css did not appear) until it restarted. Cause not known.
+- 18 Oct 2026: deployed to Vercel as project `drgowthami`, live at https://drgowthami.vercel.app. Deploy is manual from the CLI. See hosting.md.
