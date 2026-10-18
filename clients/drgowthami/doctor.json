@@ -1,0 +1,28 @@
+{
+  "eyebrow": "Your doctor",
+  "heading": "Meet Dr. Gowthami",
+  "doctors": [
+    {
+      "slug": "gowthami-namballa",
+      "name": "Dr. Gowthami Namballa",
+      "credentials": "MS Obstetrics and Gynecology",
+      "role": "Obstetrician and Gynecologist",
+      "experienceYears": 10,
+      "hospital": "Medlife Multi Speciality Hospital, Visakhapatnam",
+      "image": "doctor.svg",
+      "imageAlt": "Placeholder portrait. A photo of Dr. Gowthami Namballa will replace it.",
+      "bio": [
+        "Dr. Gowthami Namballa is an obstetrician and gynecologist in Visakhapatnam with over 10 years of experience in women's health.",
+        "She cares for women at every stage of life, from routine check-ups and pregnancy to specialist gynecological treatment.",
+        "Her team works to make each visit calm and private, so you can speak openly and trust the plan you agree on together."
+      ],
+      "focusAreas": [
+        "Pregnancy and delivery care",
+        "Gynecological conditions",
+        "Reproductive health",
+        "Preventive screening",
+        "Wellness planning"
+      ]
+    }
+  ]
+}

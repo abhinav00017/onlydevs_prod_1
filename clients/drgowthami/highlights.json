@@ -1,0 +1,25 @@
+{
+  "highlights": {
+    "eyebrow": "Why patients choose us",
+    "heading": "What makes us different",
+    "items": [
+      { "icon": "hand-heart", "title": "Holistic care", "text": "Care for the whole person, not only the symptom." },
+      { "icon": "sparkles", "title": "Personal plans", "text": "A care plan shaped around your health and your stage of life." },
+      { "icon": "users", "title": "Family support", "text": "We guide your loved ones through each stage too." },
+      { "icon": "award", "title": "Experienced team", "text": "Skilled staff who give expert care with warmth." },
+      { "icon": "microscope", "title": "Modern technology", "text": "Up-to-date tools for safe, precise and comfortable care." },
+      { "icon": "calendar-check", "title": "Online booking", "text": "Request an appointment from home." }
+    ]
+  },
+  "whyChooseUs": {
+    "eyebrow": "Why choose us",
+    "heading": "A clinic women in Vizag trust",
+    "intro": "We support women from adolescence through motherhood and beyond.",
+    "items": [
+      { "icon": "award", "title": "Experienced specialist", "text": "Over 10 years in women's health, fertility and advanced gynecological procedures." },
+      { "icon": "hand-heart", "title": "Personal care", "text": "Treatment plans fit to your needs, given with empathy and discretion." },
+      { "icon": "hospital", "title": "Modern facilities", "text": "Current diagnostic and treatment technology for accurate, safe care." },
+      { "icon": "check", "title": "All services in one place", "text": "Routine check-ups, pregnancy care, infertility treatment and surgery under one roof." }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" role="img" aria-label="Placeholder illustration">
+  <!-- PLACEHOLDER: replace with a real photo of the doctor (hero.jpg, about 800x960). -->
+  <rect width="800" height="960" fill="#FFFAF2"/>
+  <circle cx="640" cy="160" r="180" fill="#FFF7F7"/>
+  <circle cx="140" cy="820" r="220" fill="#ECDCCD" opacity="0.6"/>
+  <circle cx="400" cy="360" r="120" fill="#ECDCCD"/>
+  <path d="M170 960c0-170 103-300 230-300s230 130 230 300z" fill="#0B2142"/>
+  <path d="M330 660h140l-70 150z" fill="#FFFFFF"/>
+  <path d="M300 700c-20 80 0 150 60 190" fill="none" stroke="#EF5697" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="360" cy="900" r="18" fill="#EF5697"/>
+</svg>

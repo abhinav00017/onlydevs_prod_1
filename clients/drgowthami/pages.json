@@ -1,0 +1,108 @@
+{
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "FAQ", "href": "/faq" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footerNav": [
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Book an appointment", "href": "/book" },
+    { "label": "FAQ", "href": "/faq" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "home": {
+    "title": "Dr. Gowthami Namballa | Gynecologist in Vizag",
+    "description": "Obstetrician and gynecologist in Visakhapatnam with over 10 years of experience. Pregnancy care, gynecology, screening and wellness checks.",
+    "sections": ["hero", "quickActions", "services", "about", "highlights", "testimonials", "faq", "cta", "map"]
+  },
+  "about": {
+    "title": "About Dr. Gowthami Namballa",
+    "description": "MS Obstetrics and Gynecology. Over 10 years of care for women in Visakhapatnam at Medlife Multi Speciality Hospital.",
+    "eyebrow": "About",
+    "heading": "Care that listens first",
+    "intro": "Dr. Gowthami Namballa cares for women at every stage of life, from routine check-ups to specialist treatment.",
+    "sections": ["doctors", "whyChooseUs", "testimonials", "cta"]
+  },
+  "services": {
+    "title": "Services",
+    "description": "Gynecology, obstetrics, preventive care, wellness checks and cancer screening in Visakhapatnam.",
+    "eyebrow": "Services",
+    "heading": "How we can help",
+    "intro": "Care for women's health at every stage, all in one place.",
+    "sections": ["cta"]
+  },
+  "book": {
+    "title": "Book an appointment",
+    "description": "Request an appointment with Dr. Gowthami Namballa in Visakhapatnam, or call +91 89148 05523.",
+    "eyebrow": "Appointments",
+    "heading": "Book an appointment",
+    "intro": "Fill in the form and send it to the clinic on WhatsApp. Or call us, and we will find a time."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Find Dr. Gowthami Namballa at Medlife Multi Speciality Hospital, Collectorate Junction, Visakhapatnam.",
+    "eyebrow": "Contact",
+    "heading": "Visit or call the clinic",
+    "intro": "Dr. Gowthami sees patients at Medlife Multi Speciality Hospital, Visakhapatnam.",
+    "sections": ["cta"]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "description": "Answers to common questions about appointments and care with Dr. Gowthami Namballa.",
+    "eyebrow": "FAQ",
+    "heading": "Questions and answers",
+    "intro": "Short answers to the questions patients ask most. Call us if yours is not here.",
+    "sections": ["cta"]
+  },
+  "legal": [
+    { "slug": "terms", "title": "Terms and Conditions", "description": "The terms for using this website." },
+    { "slug": "privacy", "title": "Privacy Policy", "description": "How this website handles your information." }
+  ],
+  "sections": {
+    "hero": {
+      "eyebrow": "MS Obstetrics and Gynecology",
+      "heading": "Top Gynecologist in Vizag",
+      "text": "Dr. Gowthami Namballa is an obstetrician and gynecologist with over 10 years of experience. She gives personal, complete care to women at every stage of life, from pregnancy to advanced gynecological treatment.",
+      "image": "hero.svg",
+      "imageAlt": "Placeholder illustration of a doctor. A photo of Dr. Gowthami Namballa will replace it.",
+      "primaryCta": { "label": "Book appointment", "href": "/book" },
+      "secondaryCta": { "label": "Call +91 89148 05523", "href": "action:call" },
+      "stats": [
+        { "value": "10+", "label": "Years of experience" },
+        { "value": "5", "label": "Areas of care" }
+      ]
+    },
+    "quickActions": {
+      "heading": "Quick actions",
+      "items": [
+        { "icon": "calendar-check", "title": "Book an appointment", "text": "Pick a date and send your request.", "href": "action:book" },
+        { "icon": "phone", "title": "Call the clinic", "text": "Talk to us about a visit.", "href": "action:call" },
+        { "icon": "message", "title": "Chat on WhatsApp", "text": "Send us a message.", "href": "action:whatsapp" },
+        { "icon": "map-pin", "title": "Find the clinic", "text": "Medlife Hospital, Collectorate Junction.", "href": "/contact" }
+      ]
+    },
+    "about": {
+      "eyebrow": "Meet your doctor",
+      "heading": "Dr. Gowthami Namballa",
+      "paragraphs": [
+        "Dr. Gowthami is an obstetrician and gynecologist with an MS in Obstetrics and Gynecology and over 10 years of experience in women's health.",
+        "She takes time to listen, explains each step clearly, and builds a care plan around you."
+      ],
+      "cta": { "label": "More about Dr. Gowthami", "href": "/about" }
+    },
+    "cta": {
+      "heading": "Ready to book your visit?",
+      "text": "Send a request online or call the clinic. We will confirm a time with you.",
+      "primaryCta": { "label": "Book appointment", "href": "/book" },
+      "secondaryCta": { "label": "Call now", "href": "action:call" }
+    },
+    "map": {
+      "eyebrow": "Location",
+      "heading": "Find the clinic",
+      "intro": "Medlife Multi Speciality Hospital, near Collectorate Junction in Visakhapatnam."
+    }
+  }
+}

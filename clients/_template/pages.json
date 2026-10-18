@@ -1,0 +1,208 @@
+{
+  "nav": [
+    {
+      "label": "TODO label",
+      "href": "/"
+    },
+    {
+      "label": "TODO label",
+      "href": "/about"
+    },
+    {
+      "label": "TODO label",
+      "href": "/services"
+    },
+    {
+      "label": "TODO label",
+      "href": "/faq"
+    },
+    {
+      "label": "TODO label",
+      "href": "/contact"
+    }
+  ],
+  "footerNav": [
+    {
+      "label": "TODO label",
+      "href": "/about"
+    },
+    {
+      "label": "TODO label",
+      "href": "/services"
+    },
+    {
+      "label": "TODO label",
+      "href": "/book"
+    },
+    {
+      "label": "TODO label",
+      "href": "/faq"
+    },
+    {
+      "label": "TODO label",
+      "href": "/contact"
+    }
+  ],
+  "home": {
+    "title": "TODO title",
+    "description": "TODO description",
+    "sections": [
+      "hero",
+      "quickActions",
+      "services",
+      "about",
+      "highlights",
+      "testimonials",
+      "faq",
+      "cta",
+      "map"
+    ]
+  },
+  "about": {
+    "title": "TODO title",
+    "description": "TODO description",
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "intro": "TODO intro",
+    "sections": [
+      "doctors",
+      "whyChooseUs",
+      "testimonials",
+      "cta"
+    ]
+  },
+  "services": {
+    "title": "TODO title",
+    "description": "TODO description",
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "intro": "TODO intro",
+    "sections": [
+      "cta"
+    ]
+  },
+  "book": {
+    "title": "TODO title",
+    "description": "TODO description",
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "intro": "TODO intro"
+  },
+  "contact": {
+    "title": "TODO title",
+    "description": "TODO description",
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "intro": "TODO intro",
+    "sections": [
+      "cta"
+    ]
+  },
+  "faq": {
+    "title": "TODO title",
+    "description": "TODO description",
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "intro": "TODO intro",
+    "sections": [
+      "cta"
+    ]
+  },
+  "legal": [
+    {
+      "slug": "terms",
+      "title": "TODO title",
+      "description": "TODO description"
+    },
+    {
+      "slug": "privacy",
+      "title": "TODO title",
+      "description": "TODO description"
+    }
+  ],
+  "sections": {
+    "hero": {
+      "eyebrow": "MS Obstetrics and Gynecology",
+      "heading": "Top Gynecologist in Vizag",
+      "text": "Dr. Gowthami Namballa is an obstetrician and gynecologist with over 10 years of experience. She gives personal, complete care to women at every stage of life, from pregnancy to advanced gynecological treatment.",
+      "image": "hero.svg",
+      "imageAlt": "Placeholder illustration of a doctor. A photo of Dr. Gowthami Namballa will replace it.",
+      "primaryCta": {
+        "label": "Book appointment",
+        "href": "/book"
+      },
+      "secondaryCta": {
+        "label": "Call +91 89148 05523",
+        "href": "action:call"
+      },
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years of experience"
+        },
+        {
+          "value": "5",
+          "label": "Areas of care"
+        }
+      ]
+    },
+    "quickActions": {
+      "heading": "Quick actions",
+      "items": [
+        {
+          "icon": "calendar-check",
+          "title": "Book an appointment",
+          "text": "Pick a date and send your request.",
+          "href": "action:book"
+        },
+        {
+          "icon": "phone",
+          "title": "Call the clinic",
+          "text": "Talk to us about a visit.",
+          "href": "action:call"
+        },
+        {
+          "icon": "message",
+          "title": "Chat on WhatsApp",
+          "text": "Send us a message.",
+          "href": "action:whatsapp"
+        },
+        {
+          "icon": "map-pin",
+          "title": "Find the clinic",
+          "text": "Medlife Hospital, Collectorate Junction.",
+          "href": "/contact"
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "Meet your doctor",
+      "heading": "Dr. Gowthami Namballa",
+      "paragraphs": [
+        "Dr. Gowthami is an obstetrician and gynecologist with an MS in Obstetrics and Gynecology and over 10 years of experience in women's health.",
+        "She takes time to listen, explains each step clearly, and builds a care plan around you."
+      ],
+      "cta": {
+        "label": "More about Dr. Gowthami",
+        "href": "/about"
+      }
+    },
+    "cta": {
+      "heading": "Ready to book your visit?",
+      "text": "Send a request online or call the clinic. We will confirm a time with you.",
+      "primaryCta": {
+        "label": "Book appointment",
+        "href": "/book"
+      },
+      "secondaryCta": {
+        "label": "Call now",
+        "href": "action:call"
+      }
+    },
+    "map": {
+      "eyebrow": "Location",
+      "heading": "Find the clinic",
+      "intro": "Medlife Multi Speciality Hospital, near Collectorate Junction in Visakhapatnam."
+    }
+  }
+}

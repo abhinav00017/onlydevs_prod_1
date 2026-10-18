@@ -1,0 +1,21 @@
+{
+  "colors": {
+    "primary": "#EF5697",
+    "onPrimary": "#0B2142",
+    "heading": "#0B2142",
+    "body": "#66768E",
+    "link": "#1736B0",
+    "background": "#FFFFFF",
+    "surface": "#FFFAF2",
+    "surfaceAlt": "#FFF7F7",
+    "accent": "#ECDCCD",
+    "muted": "#EFEDED",
+    "footer": "#0B2142",
+    "onFooter": "#FFFFFF"
+  },
+  "fonts": {
+    "heading": "fraunces",
+    "body": "inter"
+  },
+  "radius": "1.25rem"
+}

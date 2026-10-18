@@ -1,0 +1,30 @@
+{
+  "eyebrow": "FAQ",
+  "heading": "Common questions",
+  "items": [
+    {
+      "question": "How do I book an appointment?",
+      "answer": "Use the booking form on this site, or call +91 89148 05523. The form sends your request to the clinic on WhatsApp."
+    },
+    {
+      "question": "Where is the clinic?",
+      "answer": "Dr. Gowthami sees patients at Medlife Multi Speciality Hospital, Collectorate Junction, Maharani Peta, Visakhapatnam 530002."
+    },
+    {
+      "question": "What does Dr. Gowthami treat?",
+      "answer": "Gynecology, pregnancy care, preventive care, wellness checks and cancer screening, for women at every stage of life."
+    },
+    {
+      "question": "Can I come for a check-up if nothing is wrong?",
+      "answer": "Yes. Regular check-ups help find problems early. Ask about a wellness check or preventive screening."
+    },
+    {
+      "question": "Should I share my medical reports in the booking form?",
+      "answer": "No. The form only asks for your name, phone number, preferred date and reason. Bring your reports to your visit."
+    },
+    {
+      "question": "What should I do in an emergency?",
+      "answer": "Do not wait for an appointment. Call 112 or go to the nearest hospital emergency department."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "highlights": {
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "items": [
+      {
+        "icon": "hand-heart",
+        "title": "TODO title",
+        "text": "TODO text"
+      },
+      {
+        "icon": "sparkles",
+        "title": "TODO title",
+        "text": "TODO text"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "eyebrow": "TODO eyebrow",
+    "heading": "TODO heading",
+    "intro": "TODO intro",
+    "items": [
+      {
+        "icon": "award",
+        "title": "TODO title",
+        "text": "TODO text"
+      },
+      {
+        "icon": "hand-heart",
+        "title": "TODO title",
+        "text": "TODO text"
+      }
+    ]
+  }
+}

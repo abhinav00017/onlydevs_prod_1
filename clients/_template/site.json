@@ -1,0 +1,41 @@
+{
+  "slug": "_template",
+  "name": "TODO name",
+  "shortName": "TODO shortName",
+  "monogram": "TO",
+  "tagline": "TODO tagline",
+  "description": "TODO description",
+  "url": "TODO https://example.com",
+  "locale": "en-IN",
+  "timezone": "Asia/Kolkata",
+  "contact": {
+    "phone": "TODO +<country code><number>",
+    "phoneDisplay": "TODO phoneDisplay",
+    "whatsapp": "TODO +<country code><number>",
+    "hospital": "TODO hospital",
+    "address": {
+      "street": "TODO street",
+      "locality": "TODO locality",
+      "city": "TODO city",
+      "region": "TODO region",
+      "postalCode": "TODO postalCode",
+      "country": "TODO"
+    },
+    "mapQuery": "TODO mapQuery"
+  },
+  "booking": {
+    "provider": "whatsapp",
+    "reasons": [
+      "TODO reason one",
+      "TODO reason two"
+    ]
+  },
+  "images": {
+    "favicon": "favicon.svg",
+    "ogImage": "og-image.png"
+  },
+  "footer": {
+    "blurb": "TODO blurb",
+    "copyright": "TODO copyright"
+  }
+}

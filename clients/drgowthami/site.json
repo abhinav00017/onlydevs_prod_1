@@ -1,0 +1,45 @@
+{
+  "slug": "drgowthami",
+  "name": "Dr. Gowthami Namballa",
+  "shortName": "Dr. Gowthami",
+  "monogram": "G",
+  "tagline": "Obstetrician and Gynecologist, Visakhapatnam",
+  "description": "Dr. Gowthami Namballa, MS Obstetrics and Gynecology, cares for women in Vizag from pregnancy to advanced gynecological treatment. Book at Medlife Hospital.",
+  "url": "https://drgowthami.vercel.app",
+  "locale": "en-IN",
+  "timezone": "Asia/Kolkata",
+  "contact": {
+    "phone": "+918914805523",
+    "phoneDisplay": "+91 89148 05523",
+    "whatsapp": "+918914805523",
+    "hospital": "Medlife Multi Speciality Hospital",
+    "address": {
+      "street": "Collectorate Junction, 15-13-12, Srirangapuram",
+      "locality": "Krishna Nagar, Maharani Peta",
+      "city": "Visakhapatnam",
+      "region": "Andhra Pradesh",
+      "postalCode": "530002",
+      "country": "IN"
+    },
+    "mapQuery": "Medlife Multi Speciality Hospital, Collectorate Junction, Maharani Peta, Visakhapatnam 530002"
+  },
+  "booking": {
+    "provider": "whatsapp",
+    "reasons": [
+      "Pregnancy care",
+      "Gynecology consultation",
+      "Preventive check-up",
+      "Wellness check",
+      "Cancer screening",
+      "Something else"
+    ]
+  },
+  "images": {
+    "favicon": "favicon.svg",
+    "ogImage": "og-image.png"
+  },
+  "footer": {
+    "blurb": "Care for women at every stage of life, from the first check-up to pregnancy and beyond.",
+    "copyright": "© 2026 Dr. Gowthami Namballa"
+  }
+}

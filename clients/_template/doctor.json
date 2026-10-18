@@ -1,0 +1,28 @@
+{
+  "eyebrow": "TODO eyebrow",
+  "heading": "TODO heading",
+  "doctors": [
+    {
+      "slug": "doctor-name",
+      "name": "TODO name",
+      "credentials": "TODO credentials",
+      "role": "TODO role",
+      "experienceYears": 0,
+      "hospital": "TODO hospital",
+      "image": "doctor.svg",
+      "imageAlt": "TODO imageAlt",
+      "bio": [
+        "TODO bio",
+        "TODO bio",
+        "TODO bio"
+      ],
+      "focusAreas": [
+        "TODO focusAreas",
+        "TODO focusAreas",
+        "TODO focusAreas",
+        "TODO focusAreas",
+        "TODO focusAreas"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "eyebrow": "Treatments",
+  "heading": "Care for every stage of life",
+  "intro": "From routine check-ups to pregnancy and screening, all with one doctor who knows your history.",
+  "items": [
+    {
+      "slug": "gynecology",
+      "name": "Gynecology",
+      "icon": "stethoscope",
+      "summary": "Care for women at every stage of life, from routine check-ups to complex gynecological conditions.",
+      "body": [
+        "Dr. Gowthami offers complete gynecological care for women at every stage of life.",
+        "Care ranges from routine check-ups and preventive screening to the diagnosis and treatment of complex gynecological conditions.",
+        "Each visit starts with a conversation, so your treatment plan fits your health and your goals."
+      ]
+    },
+    {
+      "slug": "obstetrics",
+      "name": "Obstetrics",
+      "icon": "baby",
+      "summary": "Pregnancy care from planning and conception through delivery and recovery.",
+      "body": [
+        "Dr. Gowthami gives expert, caring support through every stage of pregnancy.",
+        "Care covers planning and conception, check-ups during pregnancy, delivery, and care after birth.",
+        "The aim is a safe, healthy pregnancy for both mother and baby."
+      ]
+    },
+    {
+      "slug": "preventive-care",
+      "name": "Preventive Care",
+      "icon": "shield",
+      "summary": "Find health problems early and build healthy habits at every age.",
+      "body": [
+        "Preventive care helps find health problems early, when they are easier to treat.",
+        "Dr. Gowthami also helps you build healthy habits and understand your body at every age."
+      ]
+    },
+    {
+      "slug": "wellness-checks",
+      "name": "Wellness Checks",
+      "icon": "heart-pulse",
+      "summary": "Personal check-ups focused on prevention, early detection and overall well-being.",
+      "body": [
+        "A wellness check is not only for when something feels wrong.",
+        "These personal check-ups focus on prevention, early detection, and your overall well-being."
+      ]
+    },
+    {
+      "slug": "cancer-screening",
+      "name": "Cancer Screening",
+      "icon": "ribbon",
+      "summary": "Accessible, affordable and accurate screening for early detection and prevention.",
+      "body": [
+        "Regular screening helps find cancer early, when treatment works best.",
+        "The clinic aims to make screening accessible, affordable, and accurate.",
+        "Ask Dr. Gowthami which screening tests suit your age and health history."
+      ]
+    }
+  ]
+}

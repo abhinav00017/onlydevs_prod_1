@@ -1,0 +1,18 @@
+{
+  "eyebrow": "TODO eyebrow",
+  "heading": "TODO heading",
+  "intro": "TODO intro",
+  "items": [
+    {
+      "slug": "example-service",
+      "name": "TODO name",
+      "icon": "stethoscope",
+      "summary": "TODO summary",
+      "body": [
+        "TODO body",
+        "TODO body",
+        "TODO body"
+      ]
+    }
+  ]
+}
