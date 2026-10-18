@@ -44,3 +44,9 @@ Append only. Newest at the bottom.
 - Scalability proven: a throwaway `clients/testclinic` (new name, teal theme, Playfair heading font) built and rendered with zero code changes. Validation caught a wrong font name with a clear message. Test client removed afterwards.
 - Dev: `npm run dev` on port 3000 with `.env.local` (CLIENT=drgowthami, git-ignored). The app preview tool cannot launch it from this session; start it in the background and open http://localhost:3000.
 - Not pushed to GitHub yet. Waiting on Abhinav.
+
+## 2026-10-18 (feedback after first run)
+
+- Header felt compressed on desktop: brand, nav, phone and button sat packed together. Fix: more space between the groups, nav centred, phone number out of the header on normal desktops.
+- Dr. Gowthami gives every patient one free online consultation. Show this offer on the site (announcement bar and booking page). Offer text and on/off live in site.json so other clients can drop it.
+- Booking must allow an online consultation, not only a clinic visit. The form gets a visit type choice (in clinic / online). Visit types are data in site.json.
