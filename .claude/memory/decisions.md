@@ -37,3 +37,10 @@ Append only. Newest at the bottom.
 - Quick actions changed from the reference ("Live Chat", "24/7 Support", "Top Articles") to Book, Call, WhatsApp, Find the clinic, because the site has no chat, no 24/7 service and no articles.
 - Header has no `backdrop-filter`: it made the fixed mobile menu panel 56px tall inside the header (measured in the browser).
 - Images are placeholders (SVG figures, a plain 1200x630 PNG for Open Graph). Site URL is a guess: https://drgowthami.vercel.app.
+
+## 2026-10-18 (verified by Abhinav's session)
+
+- Scaffold reviewed. Lint, tsc, 36 tests and `CLIENT=drgowthami npm run build` all pass on the main machine.
+- Scalability proven: a throwaway `clients/testclinic` (new name, teal theme, Playfair heading font) built and rendered with zero code changes. Validation caught a wrong font name with a clear message. Test client removed afterwards.
+- Dev: `npm run dev` on port 3000 with `.env.local` (CLIENT=drgowthami, git-ignored). The app preview tool cannot launch it from this session; start it in the background and open http://localhost:3000.
+- Not pushed to GitHub yet. Waiting on Abhinav.
