@@ -9,7 +9,7 @@ it("Hero renders the heading, both calls to action and the image alt text", () =
   expect(screen.getByRole("heading", { level: 1, name: "Top Gynecologist in Vizag" })).toBeTruthy();
   expect(screen.getByRole("link", { name: "Book appointment" }).getAttribute("href")).toBe("/book");
   expect(screen.getByRole("link", { name: "Call +91 89148 05523" }).getAttribute("href")).toBe("tel:+918914805523");
-  expect(screen.getByAltText(/Placeholder illustration of a doctor/)).toBeTruthy();
+  expect(screen.getByAltText(c.pages.sections.hero.imageAlt)).toBeTruthy();
 });
 
 it("Hero shows the offer line when the offer is on, and not when it is off", () => {

@@ -66,8 +66,8 @@
       "eyebrow": "MS Obstetrics and Gynecology",
       "heading": "Top Gynecologist in Vizag",
       "text": "Dr. Gowthami Namballa is an obstetrician and gynecologist with over 10 years of experience. She gives personal, complete care to women at every stage of life, from pregnancy to advanced gynecological treatment.",
-      "image": "hero.svg",
-      "imageAlt": "Placeholder illustration of a doctor. A photo of Dr. Gowthami Namballa will replace it.",
+      "image": "doctor.webp",
+      "imageAlt": "Dr. Gowthami Namballa in surgical scrubs holding a newborn baby in the hospital.",
       "primaryCta": { "label": "Book appointment", "href": "/book" },
       "secondaryCta": { "label": "Call +91 89148 05523", "href": "action:call" },
       "stats": [

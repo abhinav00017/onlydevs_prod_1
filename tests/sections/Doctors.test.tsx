@@ -9,5 +9,5 @@ it("Doctors renders the profile with credentials and focus areas", () => {
   expect(screen.getByRole("heading", { level: 3, name: "Dr. Gowthami Namballa" })).toBeTruthy();
   expect(screen.getByText("MS Obstetrics and Gynecology")).toBeTruthy();
   expect(screen.getByText("Pregnancy and delivery care")).toBeTruthy();
-  expect(screen.getByAltText(/Placeholder portrait/)).toBeTruthy();
+  expect(screen.getByAltText(c.doctors.doctors[0].imageAlt)).toBeTruthy();
 });

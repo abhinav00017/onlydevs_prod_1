@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" role="img" aria-label="Placeholder portrait">
-  <!-- PLACEHOLDER: replace with a real portrait of the doctor (doctor.jpg, about 640x760). -->
-  <rect width="640" height="760" fill="#FFF7F7"/>
-  <circle cx="520" cy="120" r="140" fill="#FFFAF2"/>
-  <circle cx="320" cy="290" r="110" fill="#ECDCCD"/>
-  <path d="M110 760c0-160 94-280 210-280s210 120 210 280z" fill="#0B2142"/>
-  <path d="M260 500h120l-60 130z" fill="#FFFFFF"/>
-</svg>

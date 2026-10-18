@@ -68,3 +68,4 @@ Append only. Newest at the bottom.
 - The email provider is still a stub, but `buildBookingEmail` builds the subject and text now and has a test.
 - The dev server served stale CSS once (a rule appended to globals.css did not appear) until it restarted. Cause not known.
 - 18 Oct 2026: deployed to Vercel as project `drgowthami`, live at https://drgowthami.vercel.app. Deploy is manual from the CLI. See hosting.md.
+- 19 Oct 2026: real photo of Dr. Gowthami (holding a newborn, in scrubs) added as clients/drgowthami/images/doctor.webp. Used for both the hero and the doctor portrait. Placeholder SVGs removed. Render tests now read alt text from client data, not hard-coded strings. OG image and favicon are still placeholders.
