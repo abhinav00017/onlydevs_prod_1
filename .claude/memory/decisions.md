@@ -69,3 +69,11 @@ Append only. Newest at the bottom.
 - The dev server served stale CSS once (a rule appended to globals.css did not appear) until it restarted. Cause not known.
 - 18 Oct 2026: deployed to Vercel as project `drgowthami`, live at https://drgowthami.vercel.app. Deploy is manual from the CLI. See hosting.md.
 - 19 Oct 2026: real photo of Dr. Gowthami (holding a newborn, in scrubs) added as clients/drgowthami/images/doctor.webp. Used for both the hero and the doctor portrait. Placeholder SVGs removed. Render tests now read alt text from client data, not hard-coded strings. OG image and favicon are still placeholders.
+
+## 2026-10-20 (demo hub)
+
+- onlydevs is a business that sells digital services to local businesses. Dr. Gowthami is client one. The repo also gets a demo hub for sales demos.
+- Demo hub flow: landing page "select a client type" (Clinic, Cafe, more later) → industry page with its 6 services → each service opens a demo. Clinic services: website, Google Business Profile, WhatsApp automation, online consultations, offers and packages, patient records.
+- Day one: hub + industry pages + Clinic "website" demo linked to the Dr. Gowthami site. Other services open a clean coming-soon demo page. Real demos get built one at a time after.
+- Style: minimal, simple, straight. Neutral palette until Abhinav gives brand guidelines.
+- Services pitch (Abhinav's draft, tightened): 1 website, 2 Google Business Profile + reviews, 3 WhatsApp automation (confirmations, reminders, follow-ups, review requests, later prescriptions), 4 online consultations, 5 offers and packages, 6 patient records (phase two; DPDP consent needed). Setup fee for 1-2, monthly for 3-6.
